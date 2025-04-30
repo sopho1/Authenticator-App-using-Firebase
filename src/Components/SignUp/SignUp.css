@@ -1,0 +1,224 @@
+.signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin-top: 7rem;
+  }
+
+  .signup-container {
+    position: relative;
+    padding: 40px 50px;
+    border-radius: 15px;
+    margin-top: 1rem;
+    box-shadow: 0 12px 46px rgba(233, 189, 132, 255); /* Stronger shadow for a modern look */
+    width: 100%;
+    max-width: 400px; /* Limit the width */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Prevents overflow of content */
+  }
+
+  .signup-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: 2px solid transparent; /* Transparent border initially */
+    background: linear-gradient(90deg, #e9bd84, #720e9e , #e9bd84, #720e9e, #e9bd84, #720e9e, #e9bd84);
+    background-size: 300% 300%;
+    z-index: -1; /* Place it behind the content */
+    animation: glowing-lines 3s infinite linear;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+  
+  .signup-container:hover {
+    transform: translateY(-15px); /* Slight lift effect */
+    box-shadow: 0 12px 24px rgb(252, 193, 106); /* Enhanced shadow on hover */
+  }
+
+  .signup h1 {
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .signup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .signup input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #d4a76e;
+    color: #720e9e;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .signup input:focus {
+    border-color: #c89b5f; /* Highlight border on focus */
+    box-shadow: 0 0 8px rgba(200, 155, 95, 0.5); /* Glow effect */
+    outline: none;
+    width: 102%;
+    transition: ease 0.1s;
+  }
+  
+  .signup button {
+    padding: 12px;
+    margin-top: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: #720e9e;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .signup button:hover {
+    background-color: #620c69;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+  }
+
+  .signup button:active {
+    background-color: #9e7844; /* Even darker shade on click */
+  }
+
+  .login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    margin-left: 10px; /* Space between buttons */
+    border: none;
+    border-radius: 5px;
+    background-color: #720e9e;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #620c69;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+  }  
+
+  .error {
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  .signup .google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: white;
+    color: #757575;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 1rem;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .google-button img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .signup .google-button:hover {
+    background-color: gray;
+    color: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .google-button:active {
+    background-color: #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Centered loading spinner with dimmed background */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above all other elements */
+}
+
+/* Role container styling */
+.role-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 15px 0;
+}
+
+/* Label styling */
+.role-container label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+/* Radio button styling */
+.role-container input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c89b5f; /* Match the form's color scheme */
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.role-container input[type="radio"]:checked {
+  background-color: #c89b5f; /* Fill with the form's color when selected */
+  border-color: #b58a4e; /* Slightly darker border when selected */
+}
+
+.role-container input[type="radio"]:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+@keyframes glowing-lines {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}

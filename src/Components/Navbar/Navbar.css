@@ -1,0 +1,46 @@
+/* General Navbar Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.4);  /*Semi Transparent black*/
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Make sure the navbar is on top of other elements */
+}
+
+.transparent-nav{
+  background-color: transparent !important;
+  box-shadow: none; /* Remove shadow when transparent */
+}
+
+.btn {
+  position: relative;
+  left: 100rem;
+  background-color: lightseagreen;
+  color: rgb(214, 17, 17);
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: darkblue;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1700px) {
+
+  .btn {
+    position: fixed;
+    left: 1rem;
+  }
+  
+}

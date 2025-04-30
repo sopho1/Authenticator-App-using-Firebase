@@ -1,0 +1,12 @@
+html {
+  scroll-behavior: smooth; /* Smooth scrolling behavior */
+}
+
+body {
+  background-color: #121212; /* Dark background color */
+  color: white; /* Optional: Set text color to white for better contrast */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
