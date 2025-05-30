@@ -36,7 +36,7 @@ Before running this project, ensure you have the following installed:
 ## Installation
 
 1. Clone the repository:
-   ```bash
+   ``bash
    git clone https://github.com/sopho1/Authenticator-App-using-Firebase.git
    cd Authentication App
 
@@ -51,9 +51,6 @@ Before running this project, ensure you have the following installed:
     Copy your Firebase config and paste it into the project folder firebase.js
 
 4. npm start  
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Acknowledgments
 React
