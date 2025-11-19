@@ -1,20 +1,31 @@
-import React from 'react'
-import './Intro.css'
-import car from '../../Car.mp4'
+import React from 'react';
+import './Intro.css';
+import car from '../../Car.mp4';
 
-const Intro = () => {
+const Intro = ({ username = 'Explorer' }) => {
   return (
-   <>
-   <div className='video-container'>
-    <video src={car} autoPlay loop muted />
-    
-    <div className="hero-text">
-      <h1>WELCOME TO OUR WEBSITE</h1>
-    </div>
-    </div>
-   
-   </>
-  )
-}
+    <section className="video-container" id="hero">
+      <video src={car} autoPlay loop muted playsInline />
 
-export default Intro
+      <div className="hero-text">
+        <p className="eyebrow">Seamless Identity · Trusted Access</p>
+        <h1>
+          Welcome back, <span>{username}</span>
+        </h1>
+        <p className="subtitle">
+          Manage every login, approval, and insight from one elegant experience. Security meets storytelling.
+        </p>
+        <div className="hero-cta">
+          <a href="#capabilities" className="btn primary">
+            Explore Highlights
+          </a>
+          <a href="#insights" className="btn ghost">
+            View Insights
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Intro;

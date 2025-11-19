@@ -1,0 +1,154 @@
+.admin-dashboard {
+  padding: 6rem clamp(1rem, 5vw, 4rem) 4rem;
+  color: #f5f7ff;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(58, 94, 255, 0.15), transparent 50%),
+    #04050a;
+}
+
+.admin-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.admin-header h1 {
+  margin: 0.3rem 0;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.admin-stats article {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.admin-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.admin-toolbar input {
+  width: min(320px, 100%);
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+  color: #f5f7ff;
+}
+
+.admin-error {
+  color: #ff8b9a;
+  margin-bottom: 1rem;
+}
+
+.admin-loader {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.admin-table-wrapper {
+  overflow-x: auto;
+  background: rgba(8, 8, 12, 0.7);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+thead {
+  text-align: left;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+th,
+td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f5f7ff;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+}
+
+.ghost.tiny {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ghost.tiny:disabled {
+  opacity: 0.5;
+}
+
+.empty-state {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 960px) {
+  .admin-dashboard {
+    padding-top: 5rem;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-toolbar {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-dashboard {
+    padding: 5rem 1rem 3rem;
+  }
+
+  th,
+  td {
+    padding: 0.75rem 1rem;
+  }
+
+  .admin-table-wrapper {
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-stats {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  table {
+    min-width: 540px;
+  }
+}
+

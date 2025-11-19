@@ -10,6 +10,7 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import Navbar from './Components/Navbar/Navbar';
 import { ClipLoader } from 'react-spinners';
+import AdminDashboard from './Components/AdminDashboard/AdminDashboard';
 
 function AppWrapper() {
   return (
@@ -60,24 +61,28 @@ function App() {
     }
   };
 
+  const renderLoadingState = () => (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '60vh',
+      }}
+    >
+      <ClipLoader color="#007bff" loading={true} size={50} />
+    </div>
+  );
+
   return (
     <div className="App">
-      <Navbar isAuthenticated={isAuthenticated} onSignOut={handleSignOut} />
+      <Navbar isAuthenticated={isAuthenticated} userRole={userRole} onSignOut={handleSignOut} />
       <Routes>
         <Route
           path="/"
           element={
             isAuthenticated === null ? (
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  height: '100vh',
-                }}
-              >
-                <ClipLoader color="007bff" loading={true} size={50} />
-              </div> // Show a loading state while determining auth
+              renderLoadingState()
             ) : (
               <Navigate to={isAuthenticated ? '/home' : '/login'} />
             )
@@ -85,8 +90,31 @@ function App() {
         />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} />
+        <Route
+          path="/home"
+          element={
+            isAuthenticated === null ? (
+              renderLoadingState()
+            ) : isAuthenticated ? (
+              <Home userRole={userRole} />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
+        />
         <Route path="/intro" element={<Intro />} />
+        <Route
+          path="/admin"
+          element={
+            isAuthenticated === null ? (
+              renderLoadingState()
+            ) : isAuthenticated && userRole === 'admin' ? (
+              <AdminDashboard />
+            ) : (
+              <Navigate to="/home" />
+            )
+          }
+        />
       </Routes>
     </div>
   );
